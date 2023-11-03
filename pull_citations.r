@@ -20,15 +20,16 @@ get_current_year <- function(){
 }
 
 lab_scholar_ids |> 
-  mutate(year_out = ifelse(is.na(year_out), get_current_year(), year_out))
+  mutate(year_out = ifelse(is.na(year_out), get_current_year(), year_out)) - lab_scholar_ids2
 
 lab_scholar_ids |> 
         group_by(scholar_id) |>
         nest(data = pubs) |> 
         rename(pubs = data) |> 
         mutate(pubs = map(.x = scholar_id,
-                        ~scholar::get_publications(.x))) 
+                        ~scholar::get_publications(.x))) |> 
 
+ 
 
 
 
