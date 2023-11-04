@@ -41,4 +41,4 @@ RefManageR::WriteBib(pubs_bibentry, file = here::here('bib', 'lab_pubs.bib'),
 
 quarto::quarto_render("ref-template.qmd")
 
-rmarkdown::pandoc_convert("ref-template.tex", to = "gfm", citeproc = TRUE, output = "lab_pubs.md")
+rmarkdown::pandoc_convert("ref-template.tex", to = "gfm", citeproc = TRUE, output = "md/lab_pubs.md")
