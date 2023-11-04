@@ -1,0 +1,15 @@
+---
+title: CV
+format:
+  quarto-cv-pdf: default
+date: last-modified
+nocite: '@*'
+bibliography: 
+  peer: bib/lab_pubs.bib
+validate-yaml: false
+csl: csl/the-journal-of-wildlife-management.csl
+---
+
+# Publications
+::: {#refs-peer}
+:::
