@@ -1,0 +1,589 @@
+% CV ----
+
+
+\documentclass[
+  12pt,
+]
+{article}
+
+\usepackage{ebgaramond-maths}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+% this is for pandoc <3.1.8
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+
+
+
+
+
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+% TODO: Add custom LaTeX header directives here
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+
+% Now begins the stuff that I added.
+% ----------------------------------
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\large\bf}
+\subsectionfont{\rmfamily\mdseries\normalsize\scshape}
+
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+
+% Make parskips rather than indent with lists.
+\usepackage{parskip}
+% \usepackage{titlesec}
+% \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+% \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% Use fontawesome. Note: you'll need TeXLive 2015. Update.
+
+
+% Fancyhdr, as I tend to do with these personal documents.
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\scriptsize   - CV - \apstylekinda\today}
+\rfoot{\scriptsize \thepage/{\hypersetup{linkcolor=black}\pageref{LastPage}}}
+
+% Always load hyperref last.
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+
+\hypersetup{unicode=true,
+            pdftitle={ CV (Curriculum Vitae)},
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            breaklinks=true, bookmarks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Make AP style (kinda) dates for the updated/today field
+
+\usepackage{datetime}
+\newdateformat{apstylekinda}{%
+  \shortmonthname[\THEMONTH]. \THEDAY, \THEYEAR}
+
+% \emph{Updated:} \apstylekinda\today
+% ^ removed from that front bar.
+
+\usepackage{orcidlink}
+%\usepackage{academicons}
+%\definecolor{orcidlogocol}{HTML}{A6CE39}
+% \newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\textcolor[HTML]{A6CE39}{\aiOrcid}}}
+
+\begin{document}
+
+
+\centerline{\huge \bf }
+
+\vspace{2 mm}
+
+\hrule
+
+\vspace{2 mm}
+
+
+
+\moveleft.5\hoffset\centerline{         }
+
+
+
+\vspace{2 mm}
+
+\hrule
+
+
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\hypertarget{refs-peer}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-2}{}}%
+Gruntorad, M. P., Vrtiska, M. P., Murano, R. J., Garrick, M. J., \&
+Chizinski, C. J. (2023). Duck identification and regulation preferences
+among waterfowl hunters: A pre-assessment of the tier II bag limit.
+\emph{Human Dimensions of Wildlife}, \emph{1}, 1--10.
+
+\leavevmode\vadjust pre{\hypertarget{ref-3}{}}%
+Hinrichs, M. P., Nawrocki, J., Gruntorad, M. P., Vrtiska, M. P., \&
+Pegg, M. A. (2023). An examination of scenarios to increase waterfowl
+hunting participation. \emph{Wildlife Society Bulletin, e}, \emph{1490}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-1}{}}%
+Kane, D. S., Pope, K. L., Koupal, K. D., Pegg, M. A., Chizinski, C. J.,
+\& Kaemingk, M. A. (2023). Waterbody size predicts bank-and boat-angler
+efforts. \emph{Fisheries Research}, \emph{267}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-4}{}}%
+Melstrom, R. T., Kaemingk, M. A., Cole, N. W., Whitehead, J. C., \&
+Chizinski, C. J. (2023). Valuing angling on reservoirs using benefit
+transfer. \emph{North American Journal of Fisheries Management},
+\emph{43}(2), 400--416.
+
+\leavevmode\vadjust pre{\hypertarget{ref-5}{}}%
+Chizinski, C. J., Gruntorad, M. P., Lusk, J. J., Meduna, L. R., \&
+Inselman, W. M. (2022). The influence of the COVID‐19 pandemic on spring
+turkey hunting. \emph{The Journal of Wildlife Management}, \emph{86}(3).
+
+\leavevmode\vadjust pre{\hypertarget{ref-10}{}}%
+Darugna, O. A., Chizinski, C. J., Pope, K. L., Powell, L. A., \&
+Kaemingk, M. A. (2022). Visualizing social-ecological intensities for
+management of recreation visitors in a multiuse system. \emph{Journal of
+Environmental Management}, \emph{304}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-11}{}}%
+Darugna, O. A., Kaemingk, M. A., Chizinski, C. J., \& Pope, K. L.
+(2022). Heterogeneity of recreationists in a park and protected area.
+\emph{Plos One}, \emph{17}(5).
+
+\leavevmode\vadjust pre{\hypertarget{ref-9}{}}%
+Gruntorad, M. P., \& Chizinski, C. J. (2022). Perceived and experienced
+constraint negotiation: Do first‐time elk hunters know what they are in
+for? \emph{Wildlife Society Bulletin}, \emph{46}(4).
+
+\leavevmode\vadjust pre{\hypertarget{ref-8}{}}%
+Kaemingk, M. A., Arlinghaus, R., Birdsong, M. H., Chizinski, C. J., \&
+Lyach, R. (2022). Matching of resource use and investment according to
+waterbody size in recreational fisheries. \emph{Fisheries Research},
+\emph{254}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-6}{}}%
+Kane, D. S., Pope, K. L., Koupal, K. D., Pegg, M. A., Chizinski, C. J.,
+\& Kaemingk, M. A. (2022). Natural resource system size can be used for
+managing recreational use. \emph{Ecological Indicators}, \emph{145}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-7}{}}%
+Wszola, L. S., Feiner, Z. S., Chizinski, C. J., Poletto, J. B., \&
+Delong, J. P. (2022). Fishing regulations, sexual dimorphism, and the
+life history of harvest. \emph{Canadian Journal of Fisheries and Aquatic
+Sciences}, \emph{79}(9), 1435--1446.
+
+\leavevmode\vadjust pre{\hypertarget{ref-12}{}}%
+Graham, K. A., Price, N. B., Jones, V. K., Fontaine, J. J., \&
+Chizinski, C. J. (2021). 6 marketing and ecological. \emph{Harvest of
+Fish and Wildlife: New Paradigms for Sustainable Management}, \emph{87}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-15}{}}%
+Gruntorad, M. P., \& Chizinski, C. J. (2021). Hunter and angler behavior
+in harvest management. \emph{Harvest of Fish and Wildlife: New Paradigms
+for Sustainable Management}, \emph{55}, 55--68.
+
+\leavevmode\vadjust pre{\hypertarget{ref-16}{}}%
+Gruntorad, M. P., Graham, K. A., Arcilla, N., \& Chizinski, C. J.
+(2021). Is hay for the birds? Investigating landowner willingness to
+time hay harvests for grassland bird conservation. \emph{Animals},
+\emph{11}(4).
+
+\leavevmode\vadjust pre{\hypertarget{ref-18}{}}%
+Hinrichs, M. P., Gruntorad, M. P., Nawrocki, J. A., Vrtiska, M. P., \&
+Pegg, M. A. (2021). Constraints to waterfowl hunting by hunters and
+anglers in the central united states. \emph{Wildlife Society Bulletin},
+\emph{45}(4), 638--646.
+
+\leavevmode\vadjust pre{\hypertarget{ref-19}{}}%
+Hinrichs, M. P., Vrtiska, M. P., Pegg, M. A., \& Chizinski, C. J.
+(2021). Motivations to participate in hunting and angling: A comparison
+among preferred activities and state of residence. \emph{Human
+Dimensions of Wildlife}, \emph{26}(6), 576--595.
+
+\leavevmode\vadjust pre{\hypertarget{ref-14}{}}%
+Kaemingk, M. A., Bender, C. N., Chizinski, C. J., Bunch, A. J., \& Pope,
+K. L. (2021). Temporal invariance of social‐ecological catchments.
+\emph{Ecological Applications}, \emph{31}(2).
+
+\leavevmode\vadjust pre{\hypertarget{ref-13}{}}%
+Larson, L. R., Peterson, M. N., Furstenberg, R. V., Vayer, V. R., Lee,
+K. J., \& Choi, D. Y. (2021). The future of wildlife conservation
+funding: What options do US college students support? \emph{Conservation
+Science and Practice}, \emph{3}(10).
+
+\leavevmode\vadjust pre{\hypertarget{ref-20}{}}%
+Vayer, V. R., Larson, L. R., Peterson, M. N., Lee, K. J., Von
+Furstenberg, R., \& Choi, D. Y. (2021). Diverse university students
+across the united states reveal promising pathways to hunter recruitment
+and retention. \emph{The Journal of Wildlife Management}, \emph{85}(5),
+1017--1030.
+
+\leavevmode\vadjust pre{\hypertarget{ref-25}{}}%
+Gruntorad, M. P., \& Chizinski, C. J. (2020). Constraints to hunting and
+harvesting elk in a landscape dominated by private land. \emph{Wildlife
+Biology}, \emph{2020}(1), 1--9.
+
+\leavevmode\vadjust pre{\hypertarget{ref-26}{}}%
+Gruntorad, M. P., Lusk, J. J., Vrtiska, M. P., \& Chizinski, C. J.
+(2020). Identifying factors influencing hunter satisfaction across
+hunting activities in nebraska. \emph{Human Dimensions of Wildlife},
+\emph{25}(3), 215--231.
+
+\leavevmode\vadjust pre{\hypertarget{ref-27}{}}%
+Hinrichs, M. P., Price, N. B., Gruntorad, M. P., Pope, K. L., Fontaine,
+J. J., \& Chizinski, C. J. (2020). Understanding sportsperson retention
+and reactivation through license purchasing behavior. \emph{Wildlife
+Society Bulletin}, \emph{44}(2), 383--390.
+
+\leavevmode\vadjust pre{\hypertarget{ref-29}{}}%
+Jedd, T. M., Hayes, M. J., Carrillo, C. M., Haigh, T., Chizinski, C. J.,
+\& Swigart, J. (2020). Measuring park visitation vulnerability to
+climate extremes in US rockies national parks tourism. \emph{Tourism in
+Changing Natural Environments}, \emph{32}, 32--57.
+
+\leavevmode\vadjust pre{\hypertarget{ref-24}{}}%
+Kaemingk, M. A., Hurley, K. L., Chizinski, C. J., \& Pope, K. L. (2020).
+Harvest--release decisions in recreational fisheries. \emph{Canadian
+Journal of Fisheries and Aquatic Sciences}, \emph{77}(1), 194--201.
+
+\leavevmode\vadjust pre{\hypertarget{ref-21}{}}%
+Kane, D. S., Kaemingk, M. A., Chizinski, C. J., \& Pope, K. L. (2020).
+Spatial and temporal behavioral differences between angler-access types.
+\emph{Fisheries Research}, \emph{224}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-28}{}}%
+Price, N. B., Chizinski, C. J., Fontaine, J. J., Pope, K. L., Rahe, M.,
+\& Rawlinson, J. (2020). An open-sourced, web-based application to
+improve our ability to understand hunter and angler purchasing behavior
+from license data. \emph{Plos One}, \emph{15}(10).
+
+\leavevmode\vadjust pre{\hypertarget{ref-23}{}}%
+Wszola, L. S., Gruber, L. F., Stuber, E. F., Messinger, L. N., \&
+Chizinski, C. J. (2020). Use and expenditures on public access hunting
+lands. \emph{Journal of Outdoor Recreation and Tourism}, \emph{29}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-22}{}}%
+Wszola, L. S., Madsen, A. E., Stuber, E. F., Chizinski, C. J., Lusk, J.
+J., \& Taylor, J. S. (2020). Public access for pheasant hunters:
+Understanding an emerging need. \emph{The Journal of Wildlife
+Management}, \emph{84}(1), 45--55.
+
+\leavevmode\vadjust pre{\hypertarget{ref-31}{}}%
+Fontaine, J. J., Fedele, A. D., Wszola, L. S., Messinger, L. N.,
+Chizinski, C. J., \& Lusk, J. J. (2019). Hunters and their perceptions
+of public access: A view from afield. \emph{Journal of Fish and Wildlife
+Management}, \emph{10}(2), 589--601.
+
+\leavevmode\vadjust pre{\hypertarget{ref-36}{}}%
+Kaemingk, M. A., Chizinski, C. J., Allen, C. R., \& Pope, K. L. (2019).
+Ecosystem size predicts social dynamics in recreational fisheries.
+\emph{Ecology and Society}, \emph{24}(2).
+
+\leavevmode\vadjust pre{\hypertarget{ref-35}{}}%
+Kaemingk, M. A., Chizinski, C. J., Allen, C. R., \& Pope, K. L. (2019).
+Ecosystem size predicts social-ecological dynamics. \emph{Ecology and
+Society}, \emph{24}(2).
+
+\leavevmode\vadjust pre{\hypertarget{ref-32}{}}%
+Messinger, L. N., Stuber, E. F., Chizinski, C. J., \& Fontaine, J. J.
+(2019). Mortality, perception, and scale: Understanding how predation
+shapes space use in a wild prey population. \emph{Plos One},
+\emph{14}(9).
+
+\leavevmode\vadjust pre{\hypertarget{ref-30}{}}%
+Stuber, E. F., Chizinski, C. J., Lusk, J. J., \& Fontaine, J. J. (2019).
+Multivariate models and analyses. \emph{Quantitative Analyses in
+Wildlife Science}, \emph{1}, 32--62.
+
+\leavevmode\vadjust pre{\hypertarget{ref-34}{}}%
+Wszola, L. S., Simonsen, V. L., Corral, L., Chizinski, C. J., \&
+Fontaine, J. J. (2019). Simulating detection-censored movement records
+for home range analysis planning. \emph{Ecological Modelling},
+\emph{392}, 268--278.
+
+\leavevmode\vadjust pre{\hypertarget{ref-33}{}}%
+Wszola, L. S., Stuber, E. F., Chizinski, C. J., Lusk, J. J., \&
+Fontaine, J. J. (2019). Prey availability and accessibility drive hunter
+movement. \emph{Wildlife Biology}, \emph{2019}(1), 1--9.
+
+\leavevmode\vadjust pre{\hypertarget{ref-40}{}}%
+Bergan-Roller, H. E., Galt, N. J., Chizinski, C. J., Helikar, T., \&
+Dauer, J. T. (2018). Simulated computational model lesson improves
+foundational systems thinking skills and conceptual knowledge in biology
+students. \emph{BioScience}, \emph{68}(8), 612--621.
+
+\leavevmode\vadjust pre{\hypertarget{ref-39}{}}%
+Chizinski, C. J., Martin, D. R., Shizuka, D., \& Pope, K. L. (2018).
+Bipartite networks improve understanding of effects of waterbody size
+and angling method on angler--fish interactions. \emph{Canadian Journal
+of Fisheries and Aquatic Sciences}, \emph{75}(1), 72--81.
+
+\leavevmode\vadjust pre{\hypertarget{ref-38}{}}%
+Harmon, B. S., Martin, D. R., Chizinski, C. J., \& Pope, K. L. (2018).
+Variation in angler distribution and catch rates of stocked rainbow
+trout in a small reservoir. \emph{Plos One}, \emph{13}(1).
+
+\leavevmode\vadjust pre{\hypertarget{ref-41}{}}%
+Kaemingk, M. A., Chizinski, C. J., Hurley, K. L., \& Pope, K. L. (2018).
+Synchrony---an emergent property of recreational fisheries.
+\emph{Journal of Applied Ecology}, \emph{55}(6), 2986--2996.
+
+\leavevmode\vadjust pre{\hypertarget{ref-37}{}}%
+Snyman, A., Raynor, E., Chizinski, C., Powell, L., \& Carroll, J.
+(2018). African lion (panthera leo) space use in the greater mapungubwe
+transfrontier conservation area. \emph{South African Journal of Wildlife
+Research}, \emph{48}(2), 1--12.
+
+\leavevmode\vadjust pre{\hypertarget{ref-42}{}}%
+Martin, D. R., Shizuka, D., Chizinski, C. J., \& Pope, K. L. (2017).
+Network analysis of a regional fishery: Implications for management of
+natural resources, and recruitment and retention of anglers.
+\emph{Fisheries Research}, \emph{194}, 31--41.
+
+\leavevmode\vadjust pre{\hypertarget{ref-43}{}}%
+Pope, K. L., Powell, L. A., Harmon, B. S., Pegg, M. A., \& Chizinski, C.
+J. (2017). Estimating the number of recreational anglers for a given
+waterbody. \emph{Fisheries Research}, \emph{191}, 69--75.
+
+\leavevmode\vadjust pre{\hypertarget{ref-45}{}}%
+Chizinski, C. J., Bajer, P. G., Headrick, M. E., \& Sorensen, P. W.
+(2016). Different migratory strategies of invasive common carp and
+native northern pike in the american midwest suggest an opportunity for
+selective management strategies. \emph{North American Journal of
+Fisheries Management}, \emph{36}(4), 769--779.
+
+\leavevmode\vadjust pre{\hypertarget{ref-47}{}}%
+Hamel, M. J., Spurgeon, J. J., Chizinski, C. J., Steffensen, K. D., \&
+Pegg, M. A. (2016). Variability in age estimation results in ambiguity
+and false understanding of population persistence. \emph{North American
+Journal of Fisheries Management}, \emph{36}(3), 514--522.
+
+\leavevmode\vadjust pre{\hypertarget{ref-44}{}}%
+Huser, B. J., Bajer, P. G., Chizinski, C. J., \& Sorensen, P. W. (2016).
+Effects of common carp (cyprinus carpio) on sediment mixing depth and
+mobile phosphorus mass in the active sediment layer of a shallow lake.
+\emph{Hydrobiologia}, \emph{763}, 23--33.
+
+\leavevmode\vadjust pre{\hypertarget{ref-46}{}}%
+Pope, K. L., Chizinski, C. J., Wiley, C. L., \& Martin, D. R. (2016).
+Influence of anglers' specializations on catch, harvest, and bycatch of
+targeted taxa. \emph{Fisheries Research}, \emph{183}, 128--137.
+
+\leavevmode\vadjust pre{\hypertarget{ref-51}{}}%
+Bajer, P. G., Cross, T. K., Lechelt, J. D., Chizinski, C. J., Weber, M.
+J., \& Sorensen, P. W. (2015). Across‐ecoregion analysis suggests a
+hierarchy of ecological filters that regulate recruitment of a globally
+invasive fish. \emph{Diversity and Distributions}, \emph{21}(5),
+500--510.
+
+\leavevmode\vadjust pre{\hypertarget{ref-49}{}}%
+Deboer, J. A., Fontaine, J. J., Chizinski, C. J., \& Pope, K. L. (2015).
+Masked expression of life-history traits in a highly variable
+environment. \emph{Great Plains Research}, \emph{25}, 25--38.
+
+\leavevmode\vadjust pre{\hypertarget{ref-50}{}}%
+Kowalewski, L. K., Chizinski, C. J., Powell, L. A., Pope, K. L., \&
+Pegg, M. A. (2015). Accuracy or precision: Implications of sample design
+and methodology on abundance estimation. \emph{Ecological Modelling},
+\emph{316}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-48}{}}%
+Martin, D. R., Chizinski, C. J., \& Pope, K. L. (2015). Reservoir area
+of influence and implications for fisheries management. \emph{North
+American Journal of Fisheries Management}, \emph{35}(2), 185--190.
+
+\leavevmode\vadjust pre{\hypertarget{ref-52}{}}%
+Chizinski, C. J., Martin, D. R., Huber, C. G., \& Pope, K. L. (2014).
+The influence of a rapid drawdown and prolonged dewatering on fishing
+effort, catch, and harvest in a nebraska reservoir. \emph{Great Plains
+Research}, \emph{145}, 145--152.
+
+\leavevmode\vadjust pre{\hypertarget{ref-53}{}}%
+Chizinski, C. J., Martin, D. R., Hurley, K. L., \& Pope, K. L. (2014).
+Self-imposed length limits in recreational fisheries. \emph{Fisheries
+Research}, \emph{155}, 83--89.
+
+\leavevmode\vadjust pre{\hypertarget{ref-54}{}}%
+Chizinski, C. J., Martin, D. R., \& Pope, K. L. (2014). Self‐confidence
+of anglers in identification of freshwater sport fish. \emph{Fisheries
+Management and Ecology}, \emph{21}(6), 448--453.
+
+\leavevmode\vadjust pre{\hypertarget{ref-55}{}}%
+Chizinski, C. J., Martin, D. R., Pope, K. L., Barada, T. J., \&
+Schuckman, J. J. (2014). Angler effort and catch within a spatially
+complex system of small lakes. \emph{Fisheries Research}, \emph{154},
+172--178.
+
+\leavevmode\vadjust pre{\hypertarget{ref-56}{}}%
+Martin, D. R., Chizinski, C. J., Eskridge, K. M., \& Pope, K. L. (2014).
+Using posts to an online social network to assess fishing effort.
+\emph{Fisheries Research}, \emph{157}, 24--27.
+
+\leavevmode\vadjust pre{\hypertarget{ref-57}{}}%
+Loomis, J. H., Schramm Jr, H. L., Vondracek, B., Gerard, P. D., \&
+Chizinski, C. J. (2013). Effects of simulated angler capture and
+live-release tournaments on walleye survival. \emph{Transactions of the
+American Fisheries Society}, \emph{142}(3), 868--875.
+
+\leavevmode\vadjust pre{\hypertarget{ref-58}{}}%
+Bajer, P. G., Chizinski, C. J., Silbernagel, J. J., \& Sorensen, P. W.
+(2012). Variation in native micro-predator abundance explains
+recruitment of a mobile invasive fish, the common carp, in a naturally
+unstable environment. \emph{Biological Invasions}, \emph{14},
+1919--1929.
+
+\leavevmode\vadjust pre{\hypertarget{ref-63}{}}%
+Bajer, P. G., Chizinski, C. J., \& Sorensen, P. W. (2011). Using the
+judas technique to locate and remove wintertime aggregations of invasive
+common carp. \emph{Fisheries Management and Ecology}, \emph{18}(6),
+497--505.
+
+\leavevmode\vadjust pre{\hypertarget{ref-59}{}}%
+Chizinski, C. J., Peterson, A., Hanowski, J. A., Blinn, C. R.,
+Vondracek, B., \& Niemi, G. (2011). \emph{Breeding bird response to
+partially harvested riparian management zones}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-60}{}}%
+Dolph, C. L., Huff, D. D., Chizinski, C. J., \& Vondracek, B. (2011).
+Implications of community concordance for assessing stream integrity at
+three nested spatial scales in minnesota, USA. \emph{Freshwater
+Biology}, \emph{56}(8), 1652--1669.
+
+\leavevmode\vadjust pre{\hypertarget{ref-61}{}}%
+Huf, D. D., Miller, L. M., Chizinski, C. J., \& Vondracek, B. (2011).
+Mixed-source reintroductions lead to outbreeding depression in
+second-generation descendents of a native north american ish.
+\emph{Molecular Ecology}, \emph{20}, 4246--4258.
+
+\leavevmode\vadjust pre{\hypertarget{ref-62}{}}%
+Huff, D. D., Miller, L. M., Chizinski, C. J., \& Vondracek, B. (2011).
+Mixed‐source reintroductions lead to outbreeding depression in
+second‐generation descendents of a native north american fish.
+\emph{Molecular Ecology}, \emph{20}(20), 4246--4258.
+
+\end{CSLReferences}
+
+\end{document}

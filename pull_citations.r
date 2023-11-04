@@ -11,7 +11,7 @@ quarto::quarto_add_extension("mps9506/quarto-cv", no_prompt = TRUE)
 
 tribble(
         ~person, ~scholar_id, ~year_in, ~year_out, pubs,
-        "Chris Chizinski",   'kAdpcMUAAAAJ', 2011, NA, NA
+        "Chris Chizinski",   'kAdpcMUAAAAJ', 2012, NA, NA
         "Matt Gruntorad",   'IpqOh28AAAAJ', 2015, NA, NA) -> lab_scholar_ids
 
 lab_scholar_ids |> 
@@ -37,6 +37,8 @@ as.BibEntry(pubs_with_id) -> pubs_bibentry
 dir.create('bib', showWarnings = FALSE)
 
 RefManageR::WriteBib(pubs_bibentry, file = here::here('bib', 'lab_pubs.bib'),
-                      )
+                      verbose = FALSE, bibstyle = "year", keep_all = TRUE)
 
 quarto::quarto_render("ref-template.qmd")
+
+rmarkdown::pandoc_convert("ref-template.tex", to = "gfm", citeproc = TRUE, output = "lab_pubs.md")

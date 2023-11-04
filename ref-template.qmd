@@ -1,13 +1,15 @@
 ---
 title: CV
 format:
-  quarto-cv-pdf: default
+  quarto-cv-pdf: 
+    keep-tex: true
 date: last-modified
+fontsize: 12pt
 nocite: '@*'
 bibliography: 
   peer: bib/lab_pubs.bib
 validate-yaml: false
-csl: csl/the-journal-of-wildlife-management.csl
+csl: csl/apa-cv.csl 
 ---
 
 # Publications
